@@ -12,12 +12,13 @@ This blog application allows users to create accounts, write blog posts, and int
 
 ### API Documentation
 
-The API supports the following endpoints:
+The API (or view-based routing) supports the following endpoints:
 
-| Method | Endpoint           | Description                     |
-|--------|--------------------|---------------------------------|
-| GET    | /api/posts/         | List all blog posts             |
-| GET    | /api/posts/<id>/    | Retrieve a single blog post     |
-| POST   | /api/posts/         | Create a new blog post          |
-| PUT    | /api/posts/<id>/    | Update an existing blog post    |
-| DELETE | /api/posts/<id>/    | Delete a blog post              |
+| Method | Endpoint                     | Description                     |
+|--------|------------------------------|---------------------------------|
+| GET    | /post/                        | List all blog posts (home page) |
+| GET    | /post/<int:pk>/               | Retrieve a single blog post     |
+| POST   | /newpost/                     | Create a new blog post          |
+| PUT    | /post/<int:pk>/edit/          | Update an existing blog post    |
+| DELETE | /post/<int:pk>/delete/        | Delete a blog post              |
+

@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center">
+        {% if post.pk %}
+            Edit Post: {{ post.title }}
+        {% else %}
+            Create New Post
+        {% endif %}
+    </h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">
+            {% if post.pk %}Update{% else %}Create{% endif %}
+        </button>
+    </form>
+
+    {% if post.pk %}
+    <a href="{% url 'post-detail' post.pk %}" class="btn btn-secondary">Cancel</a>
+    {% endif %}
+</div>
+{% endblock %}
